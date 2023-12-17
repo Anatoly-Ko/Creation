@@ -1,0 +1,157 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+h1{
+  font-size: 125%;
+}
+
+h2{
+  text-align: center;
+  
+}
+
+header {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  height: 9vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  /* background-color: #555; */
+  text-align: center;
+  
+  
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  padding: 5px;
+  padding-top: 1%;
+
+  
+}
+
+section {
+  padding: 20px;
+
+  
+  margin-bottom: 20px;
+  border: 1px solid #ddd; 
+  background-color: #f9f9f9;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.about-us {
+  display: flex;
+  align-items: center;
+}
+
+.about-us img {
+  margin-left: auto;
+}
+
+.our-projects,
+.our-team,
+.our-services,
+.contacts {
+  margin-top: 20px;
+  
+}
+
+.services {
+  display: flex;
+  justify-content: space-between;
+}
+
+.services-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+button{
+  color: white;
+  background-color: black;
+  width: 10ch;
+  height: 5vh;
+  border: 0;
+
+
+}
+.pils-links {
+  /* display: -webkit-box; 
+  display: -ms-flexbox; */
+  display: flex;
+   /* -ms-flex-wrap: wrap;
+      flex-wrap: wrap;  
+   -ms-flex-line-pack: justify;
+      align-content: space-between;     */
+}
+
+.pils {
+  background: var(--pils-back);
+  -webkit-box-shadow: inset 0 0 0 1px var(--border), 0 10px 30px -10px rgba(0, 0, 0, 0.12);
+          box-shadow: inset 0 0 0 1px var(--border), 0 10px 30px -10px rgba(0, 0, 0, 0.12);
+  border-radius: 60px;
+  font-size: 13px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  cursor: pointer;
+  margin: 5px;
+  color: var(--text-primary);
+}
+
+.pils a,.pils a:visited, .pils a:link {
+  display: block;
+  text-decoration: none;
+  color: var(--main-2-fore);
+  padding: 5px 10px;
+}
+
+.pils a i, .pils a:visited i, .pils a:link i {
+  padding-right: 2px;
+}
+
+.pils:hover {
+  -webkit-box-shadow: inset 0 0 0 1px #6f95fe, 0 10px 35px -10px #6f95fe;
+          box-shadow: inset 0 0 0 1px #6f95fe, 0 10px 35px -10px #6f95fe;
+}
+
+.pils:hover FontAwesomeIcon {
+  color: #6f95fe;
+}
+
+@media (min-width: 768px) {
+.pils-links {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  /* margin: 0px 100px; 
+  -ms-flex-preferred-size: 240px;
+      flex-basis: 240px; */
+}
+}
