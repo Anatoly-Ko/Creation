@@ -1,4 +1,4 @@
-#Ссылка на макет
+# Ссылка на макет
 https://www.figma.com/file/FewIGuE3zZ6TFVW5DRGITc/Untitled?type=design&node-id=0%3A1&mode=design&t=OFH6BOrXBaNbX71f-1
 
 
