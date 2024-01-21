@@ -1,108 +1,307 @@
-import './App.css';
-import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { faEnvelope,faCake} from '@fortawesome/free-solid-svg-icons'
-import { faTelegram } from '@fortawesome/free-brands-svg-icons';
-export const Ap =() => {
+import React from "react";
+import "./App.css";
+
+import { useEffect, useState } from "react";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faCake } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebook,
+  faInstagram,
+  faTelegram,
+} from "@fortawesome/free-brands-svg-icons";
+
+import logo from "../Images/IMG_9533.jpg";
+import forum from "../Images/russian-algerian-business-foruma-platform-for-establishing-business-contacts-and-promoting-trade-be-795838940.png";
+import culture from "../Images/international-cultural-weekan-event-aimed-at-showcasing-the-culture-art-and-traditions-of-russia--651825025.png";
+import education from "../Images/educational-exchangea-student-exchange-program-designed-to-deepen-knowledge-and-strengthen-ties-bet-552959897.png";
+
+import one from "../Images/diplomatsour-team-includes-experienced-diplomats-who-can-assist-in-establishing-contacts-and-creat-787448927.png";
+import two from "../Images/professional-consultantsour-consultants-provide-expert-opinions-and-support-for-successful-interact-606966667.png";
+import three from "../Images/team-collaborationexperts-in-collaborationour-team-consists-of-highly-qualified-specialists-read-181015212.png";
+
+import four from "../Images/cultural-tiesrussian-and-algerian-artists-musicians-and-writers-collaborate-to-create-unique-pro-550254195.png";
+import five from "../Images/economic-partnershiprussia-and-algeria-are-actively-developing-trade-and-economic-cooperation-esp-42285790.png";
+import six from "../Images/education-and-sciencethere-is-an-active-exchange-of-students-researchers-and-educators-between-r-27290424.png";
+
+export const Ap = () => {
+  // Состояния для хранения значений полей формы
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  // Загрузка значений из localStorage при монтировании компонента
+  useEffect(() => {
+    const savedName = localStorage.getItem("name");
+    const savedEmail = localStorage.getItem("email");
+    const savedMessage = localStorage.getItem("message");
+
+    if (savedName) setName(savedName);
+    if (savedEmail) setEmail(savedEmail);
+    if (savedMessage) setMessage(savedMessage);
+  }, []);
+
+  // Сохранение значений в localStorage при изменении состояний
+  useEffect(() => {
+    localStorage.setItem("name", name);
+    localStorage.setItem("email", email);
+    localStorage.setItem("message", message);
+  }, [name, email, message]);
+
+  const scrollToContacts = () => {
+    const contactsSection = document.getElementById("contacts");
+    if (contactsSection) {
+      contactsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
-    
       <body>
         <header>
-        
-        <nav>
-            <h1>Your Website</h1>
+          <nav>
+            <h1>Созидание</h1>
             <section class="head_options">
-            <a href="#about">About Us</a>
-            <a href="russia">Russia</a>
-            <a href="algeria">Algeria</a>
-            <a href="#contacts">Contacts</a>
+              <a href="#about">About Us</a>
+
+              <a href="russia">Russia</a>
+
+              <a href="algeria">Algeria</a>
+
+              <a href="FAQ">FAQ</a>
+
+              <button onClick={scrollToContacts}>Contacs</button>
             </section>
-            <button>Sign Up</button>
-        </nav>
+          </nav>
         </header>
 
         <hr></hr>
 
         <section id="about" class="about-us">
-        <div>
-            <h2>Conecting Russia</h2>
-            <h2>and Algeria for mutual growth</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget metus ac turpis facilisis faucibus.</p>
-            <button>Sign up</button>
-        </div>
-        <img src="/img/IMG_9533.jpg" alt="Logo"/>
-        
+          <div className="text-container">
+            <h2>Conecting Russia and Algeria for mutual growth</h2>
+            <p>
+              The primary goal of the Russia-Algeria Cooperation Center is to
+              encourage collaboration and mutual exchange between the two
+              nations, with a focus enhancing economic development and fostering
+              cultural understanding.
+            </p>
+            <p>
+              The Russia-Algeria Cooperation Center aims to foster collaboration
+              and exchange between the two countries, promoting economic
+              development and cultural understanding.
+            </p>
+            <button onClick={scrollToContacts}>Contacs</button>
+          </div>
+          <img src={logo} alt="Logo" className="logo-small" />
         </section>
 
+        <hr></hr>
 
         <section id="our-projects" class="our-projects">
-        <h2>Our Projects</h2>
-        
-    </section>
+          <h2>Our Projects</h2>
 
-    <section id="our-team" class="our-team">
-        <h2>Our Team</h2>
-        
-    </section>
+          <section class="projects">
+            <section class="projects-n">
+              <div class="project-column">
+                <img src={forum} alt="Project 1" />
+                <h4>Russian-Algerian Business Forum</h4>
+                <p>
+                  A platform for establishing business contacts and promoting
+                  trade between entrepreneurs from Russia and Algeria.
+                </p>
+              </div>
+            </section>
 
-    <section id="our-services" class="our-services">
+            <section class="projects-n">
+              <div class="project-column">
+                <h4>International Cultural Week</h4>
+                <p>
+                  An event aimed at showcasing the culture, art, and traditions
+                  of Russia and Algeria.
+                </p>
+                <img src={culture} alt="Project 2" />
+              </div>
+            </section>
 
-        <h2>Our Services</h2>
-        <section class="services">
-        <div class="services-block">
-            {/* <img src="service1.png" alt="Service 1"> */}
-            <h3>Service 1</h3>
-            <p>Description of Service 1.</p>
-        </div>
-        <div class="services-block">
-            {/* <img src="service2.png" alt="Service 2"> */}
-            <h3>Service 2</h3>
-            <p>Description of Service 2.</p>
-        </div>
-        <div class="services-block">
-            {/* <img src="service3.png" alt="Service 3"> */}
-            <h3>Service 3</h3>
-            <p>Description of Service 3.</p>
-        </div>
+            <section class="projects-n">
+              <div class="project-column">
+                <img src={education} alt="Project 3" />
+                <h4>Educational Exchange</h4>
+                <p>
+                  A student exchange program designed to deepen knowledge and
+                  strengthen ties between Russian and Algerian universities.
+                </p>
+              </div>
+            </section>
+          </section>
         </section>
+
+        <hr></hr>
+
+        <section id="our-team" class="our-team">
+          <h2>Our Team</h2>
+
+          <section class="team-members">
+            <section class="team-members-n">
+              <div class="team-member-column">
+                <img src={one} alt="Team Member 1" />
+                <h4>Experts in Collaboration</h4>
+                <p>
+                  Our team consists of highly qualified specialists ready to
+                  assist in the implementation of your projects.
+                </p>
+              </div>
+            </section>
+
+            <section class="team-members-n">
+              <div class="team-member-column">
+                <h4>Diplomats</h4>
+                <p>
+                  Our team includes experienced diplomats who can assist in
+                  establishing contacts and creating a favorable atmosphere for
+                  collaboration.
+                </p>
+                <img src={two} alt="Team Member 3" />
+              </div>
+            </section>
+
+            <section class="team-members-n">
+              <div class="team-member-column">
+                <img src={three} alt="Team Member 2" />
+                <h4>Professional Consultants</h4>
+                <p>
+                  Our consultants provide expert opinions and support for
+                  successful interactions between Russia and Algeria.
+                </p>
+              </div>
+            </section>
+          </section>
         </section>
-        
+
+        <hr></hr>
+
+        <section id="our-services" class="our-services">
+          <h2>Our Services</h2>
+          <section class="services">
+            <div class="services-block">
+              <img src={five} alt="Team Member 1" />
+              <h3>Economic Partnership</h3>
+              <p>
+                Russia and Algeria are actively developing trade and economic
+                cooperation, especially in the fields of energy and agriculture.
+              </p>
+            </div>
+
+            <div class="services-block">
+              <img src={six} alt="Team Member 1" />
+              <h3>Education and Science</h3>
+              <p>
+                There is an active exchange of students, researchers, and
+                educators between Russian and Algerian universities.
+              </p>
+            </div>
+
+            <div class="services-block">
+              <img src={four} alt="Team Member 1" />
+              <h3>Cultural Ties</h3>
+              <p>
+                Russian and Algerian artists, musicians, and writers collaborate
+                to create unique projects that reflect the cultural diversity of
+                both countries.
+              </p>
+            </div>
+          </section>
+        </section>
+
+        <hr></hr>
 
         <section id="contacts" class="contacts">
+          <section>
+            <h2>Contacs</h2>
 
-        <section>
-        <h2>Contacs</h2>
-        <button>Submit</button>
-        </section>
-        <section>
-        <h3>Follow Us</h3>
-        <section class="pils-links">
-        <span class="pils"><a href="#" ><FontAwesomeIcon icon={faTelegram} /> Telegram</a></span>
-        <span class="pils"><a href="#" ><FontAwesomeIcon icon="fa-brands fa-telegram" />Telegram</a></span>
-        <span class="pils"><a href="#" ><FontAwesomeIcon icon="fa-brands fa-telegram" />Telegram</a></span>
-        <span class="pils"><a href="#" ><FontAwesomeIcon icon="fa-brands fa-telegram" />Telegram</a></span>
-        </section>
-        </section>
+            <form>
+              <label htmlFor="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+
+              <label htmlFor="message">Message:</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Your message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+              />
+
+              <button type="submit">Submit</button>
+            </form>
+          </section>
+          <hr></hr>
+          <section>
+            <h3>Follow Us</h3>
+            <section class="pils-links">
+              <span class="pils">
+                <a href="#">
+                  <FontAwesomeIcon icon={faTelegram} /> Telegram
+                </a>
+              </span>
+              <span class="pils">
+                <a href="#">
+                  <FontAwesomeIcon icon={faCake} /> Pirog
+                </a>
+              </span>
+              <span class="pils">
+                <a href="#">
+                  <FontAwesomeIcon icon={faInstagram} /> Instagram
+                </a>
+              </span>
+              <span class="pils">
+                <a href="#">
+                  <FontAwesomeIcon icon={faFacebook} /> Facebook
+                </a>
+              </span>
+            </section>
+
+            <p> Address: Moscow, Tverskaya Street, 10r</p>
+            <p>Phone: +7 123 456 7890</p>
+            <p>Email: info@russialgeria.center</p>
+          </section>
         </section>
 
-
-
-    <footer>
-        <nav>
-            <a href="russia">Russia</a>
+        <footer>
+          <nav>
+            <a href="russia" id="podval">
+              Russia
+            </a>
             <p>© 2023 Your Website. All rights reserved.</p>
-            <a href="algeria">Algeria</a>
-        </nav>
-    </footer>
-
-
-
+            <a href="algeria" id="podval">
+              Algeria
+            </a>
+          </nav>
+        </footer>
       </body>
-
-
-
     </>
   );
-}
+};
 
 export default Ap;

@@ -1,88 +1,139 @@
-import './App.css';
+import "./App.css";
+import video from "../Images/production_id_3711794.mp4";
 
-
-
-export const Alg =() => {
+export const Alg = () => {
   return (
     <>
-    
       <body>
         <header>
-        
-        <nav>
+          <nav>
             <h1>Созидание</h1>
             <section class="head_options">
-            <a href="/home">HOME</a>
+              <a href="/home">Home</a>
+              <a href="russia">Russia</a>
+
+              <a href="algeria">Algeria</a>
+
+              <a href="FAQ">FAQ</a>
             </section>
-            <button>Sign up</button>
-        </nav>
+          </nav>
         </header>
         <hr></hr>
-
-        <section class="video">
-
-            <div>
-                <h2>Video</h2>
-                Тут будет видео
+        <section>
+          <div class="video-bg">
+            <video
+              src={video}
+              type="video/mp4"
+              controls="controls"
+              autoplay="true"
+              muted="true"
+              loop="true"
+            />
+            <div class="effects"></div>
+            <div class="video-bg__content">
+              <h1>Algeria</h1>
             </div>
-
+          </div>
         </section>
+        <hr></hr>
 
         <section class="info">
-            <h2>Information about contry</h2>
-
-            <section class="services">
-
-            <div id="our-services" class="our-services">
-                <h3>Колонка 1</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <h2>Information about the Country</h2>
+          <section class="services">
+            <div id="our-services-1" class="our-services">
+              <h3>Geography and Culture</h3>
+              <p>
+                Algeria, with its diverse landscapes, is situated in North
+                Africa. From the vast Sahara Desert to the Mediterranean
+                coastline, the country boasts a rich cultural heritage
+                influenced by its Berber, Arab, and French roots. Historical
+                sites like the ancient city of Timgad and the Casbah of Algiers
+                showcase Algeria's unique blend of history and culture.
+              </p>
             </div>
-            <div id="our-services" class="our-services"> 
-                <h3>Колонка 2</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
+            <div id="our-services-2" class="our-services">
+              <h3>History and Traditions</h3>
+              <p>
+                Algeria has a compelling history, marked by periods of Berber
+                kingdoms, Arab rule, and French colonization. The country gained
+                independence in 1962, leading to the celebration of events like
+                Independence Day. Algerian cuisine reflects the diverse cultural
+                influences, offering delicious dishes like couscous and tagines.
+                Traditional music and dance, such as Rai, add vibrancy to
+                Algerian traditions.
+              </p>
             </div>
+          </section>
 
-
-            </section>
-
+          <section class="services">
+            <div id="our-services-1" class="our-services">
+              <h3>Natural Wonders</h3>
+              <p>
+                Algeria is home to natural wonders like the Tassili n'Ajjer
+                National Park, known for its prehistoric rock art and unique
+                geological formations. The Ahaggar Mountains offer a glimpse
+                into the country's geological and cultural history.
+              </p>
+            </div>
+            <div id="our-services-2" class="our-services">
+              <h3>Innovation and Heritage</h3>
+              <p>
+                Modern Algeria is making strides in various fields, from science
+                to literature. The country values its literary heritage, with
+                notable authors like Albert Camus. Algeria's traditional music
+                and dance are celebrated globally, showcasing the richness of
+                its cultural expression.
+              </p>
+            </div>
+          </section>
         </section>
-
+        <hr></hr>
         <section class="slider">
-        <h2>Vizualization</h2>
+          <h2>Vizualization</h2>
 
-            <div>
-                Слайдер
-            </div>
-
+          <div>Слайдер располагается тут</div>
         </section>
-
+        <hr></hr>
         <section class="useful_sources">
-        <h2>Information</h2>
-            <div>
-                Ссылки на полезные ресурсы (как располагаются?)
-            </div>
-
+          <h2>Information</h2>
+          <div>
+            Explore more about Algeria through these useful resources:
+            <ul>
+              <li>
+                <a href="https://www.mfa.gov.dz/discover-algeria/tourism">
+                  Official Tourism Website
+                </a>
+              </li>
+              <li>
+                <a href="https://www.britannica.com/topic/history-of-Algeria">
+                  Algerian History Overview
+                </a>
+              </li>
+              <li>
+                <a href="#">Cultural Insights</a>
+              </li>
+              <li>
+                <a href="https://jesseatsandtravels.com/how-to-eat-like-an-algerian/">
+                  Traveler's Guide to Algerian Cuisine
+                </a>
+              </li>
+            </ul>
+          </div>
         </section>
-
-
-
-    <footer>
-        <nav>
-            <a href="home">Home</a>
+        <footer>
+          <nav>
+            <a href="home" id="podval">
+              Home
+            </a>
             {/* <p>© 2023 Your Website. All rights reserved.</p> */}
-            <a href="russia">Russia</a>
-        </nav>
-    </footer>
-
-
-
+            <a href="russia" id="podval">
+              Russia
+            </a>
+          </nav>
+        </footer>
       </body>
-
-
-
     </>
   );
-}
+};
 
 export default Alg;
