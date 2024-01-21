@@ -1,6 +1,10 @@
 import "./App.css";
 import video from "../Images/production_id_3711794.mp4";
 
+import one from "../Images/1.jpg";
+import two from "../Images/2.jpg";
+import three from "../Images/3.jpg";
+
 export const Alg = () => {
   return (
     <>
@@ -88,11 +92,24 @@ export const Alg = () => {
           </section>
         </section>
         <hr></hr>
-        <section class="slider">
+
+        <section>
           <h2>Vizualization</h2>
 
-          <div>Слайдер располагается тут</div>
+          <div class="slider-wrapper">
+            <div class="slider">
+              <img id="slide-1" src={one} />
+              <img id="slide-2" src={two} />
+              <img id="slide-3" src={three} />
+            </div>
+            <div class="slider-nav">
+              <a href="#slide-1"></a>
+              <a href="#slide-2"></a>
+              <a href="#slide-3"></a>
+            </div>
+          </div>
         </section>
+
         <hr></hr>
         <section class="useful_sources">
           <h2>Information</h2>
@@ -120,12 +137,13 @@ export const Alg = () => {
             </ul>
           </div>
         </section>
+
         <footer>
           <nav>
             <a href="home" id="podval">
               Home
             </a>
-            {/* <p>© 2023 Your Website. All rights reserved.</p> */}
+            <p>© 2023 Your Website. All rights reserved.</p>
             <a href="russia" id="podval">
               Russia
             </a>

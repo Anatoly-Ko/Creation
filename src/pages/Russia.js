@@ -1,6 +1,10 @@
 import "./App.css";
 import video from "../Images/production_id_3923315.mp4";
 
+import one from "../Images/photo_2024-01-21_10-48-33.jpg";
+import two from "../Images/russia1.jpg";
+import three from "../Images/moscow.jpg";
+
 export const Add = () => {
   return (
     <>
@@ -87,13 +91,22 @@ export const Add = () => {
         </section>
 
         <hr></hr>
-
-        <section class="slider">
+        <section>
           <h2>Vizualization</h2>
 
-          <div>Слайдер расположить тут</div>
+          <div class="slider-wrapper">
+            <div class="slider">
+              <img id="slide-1" src={one} />
+              <img id="slide-2" src={two} />
+              <img id="slide-3" src={three} />
+            </div>
+            <div class="slider-nav">
+              <a href="#slide-1"></a>
+              <a href="#slide-2"></a>
+              <a href="#slide-3"></a>
+            </div>
+          </div>
         </section>
-
         <hr></hr>
 
         <section class="useful_sources">
@@ -130,7 +143,7 @@ export const Add = () => {
             <a href="home" id="podval">
               Home
             </a>
-            {/* <p>© 2023 Your Website. All rights reserved.</p> */}
+            <p>© 2023 Your Website. All rights reserved.</p>
             <a href="algeria" id="podval">
               Algeria
             </a>
